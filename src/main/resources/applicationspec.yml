@@ -1,0 +1,13 @@
+version: 0.0
+os: linux
+files:
+  - source: /calculator.jar
+    destination: /opt/calculator/
+
+hooks:
+  AfterInstall:
+    - location: scripts/install.sh
+      timeout: 300
+  ApplicationStart:
+    - location: scripts/start.sh
+      timeout: 300
