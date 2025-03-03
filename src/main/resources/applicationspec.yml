@@ -2,12 +2,14 @@ version: 0.0
 os: linux
 files:
   - source: /calculator.jar
-    destination: /opt/calculator/
+    destination: /home/ubuntu/calculator/
 
 hooks:
   AfterInstall:
-    - location: scripts/install.sh
+    - location: resources/install.sh
       timeout: 300
+      runas: ubuntu
   ApplicationStart:
-    - location: scripts/start.sh
+    - location: resources/start.sh
       timeout: 300
+      runas: ubuntu
